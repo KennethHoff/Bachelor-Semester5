@@ -1,7 +1,14 @@
 ﻿namespace EFSuperHero.App
 {
-	internal class Program
+	class Program
 	{
-		public static void Main(string[] args) { }
+		static void Main(string[] args)
+		{
+			// HeroCreation.AddOneSuperHero();
+			// HeroCreation.AddSomeSuperHeroes(50);
+			
+			// BattleCreation.AddOneBattle();
+			// BattleCreation.AddSomeBattles();
+		}
 	}
 }

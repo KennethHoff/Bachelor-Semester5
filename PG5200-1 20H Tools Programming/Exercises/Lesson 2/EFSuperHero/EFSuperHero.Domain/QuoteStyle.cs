@@ -1,9 +1,9 @@
 ﻿namespace EFSuperHero.Domain
 {
-    public enum QuoteStyle
-    {
-        Lame,
-        Cheesy,
-        Awesome
-    }
+	public enum QuoteStyle
+	{
+		Lame,
+		Cheesy,
+		Awesome
+	}
 }
