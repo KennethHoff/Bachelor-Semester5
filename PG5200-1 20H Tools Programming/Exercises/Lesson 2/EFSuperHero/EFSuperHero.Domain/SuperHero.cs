@@ -7,11 +7,11 @@ namespace EFSuperHero.Domain
 {
 	public class SuperHero
 	{
-		public static SuperHero CreateInstance(string name, HairStyle hairStyle = Enums.HairStyle.Normal)
+		public static SuperHero CreateInstance(string alias, HairStyle hairStyle = Enums.HairStyle.Normal)
 		{
 			return new SuperHero()
 			{
-				Name = name,
+				Name = alias,
 				HairStyle = hairStyle,
 				SuperHeroBattles = new List<SuperHeroBattle>()
 			};

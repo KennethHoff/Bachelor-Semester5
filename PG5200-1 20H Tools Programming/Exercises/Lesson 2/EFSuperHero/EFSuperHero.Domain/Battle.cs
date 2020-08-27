@@ -8,7 +8,7 @@ namespace EFSuperHero.Domain
 	{
 		public static Battle CreateInstance(string name, string description, bool isBrutal, DateTime startDate)
 		{
-			Console.WriteLine("Creating a new Battle");
+			// Console.WriteLine("Creating a new Battle");
 
 			var newBattle = new Battle()
 			{
@@ -19,7 +19,7 @@ namespace EFSuperHero.Domain
 				SuperHeroBattles = new List<SuperHeroBattle>()
 			};
 			
-			Console.WriteLine("Created a new Battle");
+			// Console.WriteLine("Created a new Battle");
 
 			return newBattle;
 		}

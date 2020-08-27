@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using EFSuperHero.Data;
 using EFSuperHero.Domain;
@@ -10,7 +11,7 @@ namespace EFSuperHero.App
 	{
 		public static void AddOneBattle()
 		{
-			Console.WriteLine("Starting the process of adding a battle to the database!");
+			// Console.WriteLine("Starting the process of adding a battle to the database!");
 
 			const string battleName = "An Added Battle";
 
@@ -38,7 +39,7 @@ namespace EFSuperHero.App
 				context.SaveChanges();
 			}
 
-			Console.WriteLine("Finalized the process of adding a battle to the database!");
+			// Console.WriteLine("Finalized the process of adding a battle to the database!");
 		}
 		
 		public static void AddSomeBattles()
@@ -76,14 +77,15 @@ namespace EFSuperHero.App
 
 		public static Battle CreateRandom()
 		{
-			Program.WriteHighlightedLine("Started the process of creating a random battle!");
+			// Console.WriteLine("Started the process of creating a random battle!");
+			
 
 
 			#region Date Generation ( WAAAAY too complex for this :|)
 
 			var RNG = new Random();
 
-			var year = RNG.Next(0, 9999);
+			var year = RNG.Next(1, 9999);
 			
 			var century = Math.Floor(year / 100f);
 
@@ -102,7 +104,7 @@ namespace EFSuperHero.App
 			var endDate = startDate.AddYears(1).AddSeconds(-1);
 
 			
-			var isBrutal = (year * RNG.Next() % 1) == 0;
+			var isBrutal = (year * RNG.Next(0, 100) % 1) == 0;
 
 			#endregion
 			
@@ -111,7 +113,7 @@ namespace EFSuperHero.App
 			var battleDescription = $"The {battleName} was a {(isBrutal ? "devastating battle" : "battle soon to be forgotten")}";
 
 
-			Console.WriteLine(startDate);
+			// Console.WriteLine(startDate);
 			var battle = Battle.CreateInstance(battleName, battleDescription, isBrutal, startDate);
 
 			var numberOfEvents = RNG.Next(1, 25);
@@ -122,9 +124,25 @@ namespace EFSuperHero.App
 			battle.BattleLog = battleLog;
 			battle.EndDate = endDate;
 			
-			Program.WriteHighlightedLine("Finalized the creation of a random battle!");
+			// Console.WriteLine("Finalized the creation of a random battle!");
 
 			return battle;
+		}
+
+		public static List<Battle> CreateRandom(int amount)
+		{
+			// Console.WriteLine($"Started the process creating {amount} random battles!");
+
+			var result = new List<Battle>(amount);
+
+			for (int i = 0; i < amount; i++)
+			{
+				result.Add(CreateRandom());
+			}
+
+			// Console.WriteLine($"Finalized the creation of {amount} random battles!");
+
+			return result;
 		}
 	}
 }

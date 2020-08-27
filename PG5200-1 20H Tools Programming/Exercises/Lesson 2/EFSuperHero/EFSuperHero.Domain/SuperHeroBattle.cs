@@ -11,7 +11,7 @@
 			};
 			
 			
-			return new SuperHeroBattle();
+			return newSuperHeroBattle;
 		}
 		public int SuperHeroId { get; set; }
 		public SuperHero SuperHero { get; set; }

@@ -25,7 +25,6 @@
 
 		public string Description { get; set; }
 
-		// How do I add this value? Retroactively by passing in the BattleLog retroactively?
 		public BattleLog BattleLog { get; set; }
 	}
 }
