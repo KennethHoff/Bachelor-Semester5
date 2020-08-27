@@ -1,13 +1,10 @@
-﻿using System;
-
-
-namespace EFSuperHero.Domain
+﻿namespace EFSuperHero.Domain
 {
 	public class BattleEvent
 	{
 		public static BattleEvent CreateInstance(int order, string summary, string description)
 		{
-			Console.WriteLine($"Creating a new BattleEvent (#{order})");
+			// Console.WriteLine($"Creating a new BattleEvent (#{order})");
 
 			var newBattleEvent = new BattleEvent()
 			{
@@ -15,7 +12,7 @@ namespace EFSuperHero.Domain
 				Summary = summary,
 				Description = description
 			};
-			Console.WriteLine("Created a new BattleEvent");
+			// Console.WriteLine("Created a new BattleEvent");
 
 			return newBattleEvent;
 		}

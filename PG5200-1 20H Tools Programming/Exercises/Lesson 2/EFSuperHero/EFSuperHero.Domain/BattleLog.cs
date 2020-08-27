@@ -6,6 +6,7 @@ namespace EFSuperHero.Domain
 {
 	public class BattleLog
 	{
+
 		public static BattleLog CreateInstance(string name, int numberOfBattleEvents)
 		{
 			Console.WriteLine("Creating a new BattleLog");

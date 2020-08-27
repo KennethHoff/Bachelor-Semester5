@@ -6,8 +6,7 @@ namespace EFSuperHero.Domain
 {
 	public class Battle
 	{
-		public static Battle CreateInstance(string name, string description, bool isBrutal, BattleLog battleLog, DateTime startDate,
-			DateTime endDate)
+		public static Battle CreateInstance(string name, string description, bool isBrutal, DateTime startDate)
 		{
 			Console.WriteLine("Creating a new Battle");
 
@@ -16,9 +15,8 @@ namespace EFSuperHero.Domain
 				Name = name,
 				Description = description,
 				IsBrutal = isBrutal,
-				BattleLog = battleLog,
 				StartDate = startDate,
-				EndDate = endDate
+				SuperHeroBattles = new List<SuperHeroBattle>()
 			};
 			
 			Console.WriteLine("Created a new Battle");
@@ -38,7 +36,7 @@ namespace EFSuperHero.Domain
 
 		public DateTime EndDate { get; set; }
 
-		public ICollection<SuperHeroBattle>? Battles { get; set; }
+		public ICollection<SuperHeroBattle> SuperHeroBattles { get; set; }
 
 		public BattleLog BattleLog { get; set; }
 	}

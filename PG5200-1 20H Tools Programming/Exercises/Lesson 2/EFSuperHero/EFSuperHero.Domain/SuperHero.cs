@@ -1,15 +1,19 @@
 ﻿using System.Collections.Generic;
 
+using EFSuperHero.Domain.Enums;
+
 
 namespace EFSuperHero.Domain
 {
 	public class SuperHero
 	{
-		public static SuperHero CreateInstance(string name)
+		public static SuperHero CreateInstance(string name, HairStyle hairStyle = Enums.HairStyle.Normal)
 		{
 			return new SuperHero()
 			{
-				Name = name
+				Name = name,
+				HairStyle = hairStyle,
+				SuperHeroBattles = new List<SuperHeroBattle>()
 			};
 		}
 
@@ -23,6 +27,6 @@ namespace EFSuperHero.Domain
 
 		public RealIdentity RealIdentity { get; set; }
 
-		public ICollection<SuperHeroBattle>? Battles { get; set; }
+		public ICollection<SuperHeroBattle> SuperHeroBattles { get; set; }
 	}
 }
